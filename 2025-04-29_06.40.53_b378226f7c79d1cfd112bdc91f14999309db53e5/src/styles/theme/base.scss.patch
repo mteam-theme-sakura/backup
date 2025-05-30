@@ -1,0 +1,13 @@
+commit b378226f7c79d1cfd112bdc91f14999309db53e5
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 06:40:53 2025 +0800
+
+    Update base.scss
+
+diff --git a/src/styles/theme/base.scss b/src/styles/theme/base.scss
+index 0703c647..e0564b7c 100644
+--- a/src/styles/theme/base.scss
++++ b/src/styles/theme/base.scss
+@@ -61 +61 @@
+-  .bg-\[\#2f4879\],.ant-table-thead >tr>th,.colhead{
++  .bg-\[\#2f4879\],.ant-table-thead >tr>th,.colhead,table.tablist thead td{

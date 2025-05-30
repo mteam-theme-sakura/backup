@@ -1,0 +1,25 @@
+commit 12698ab87b6d11b04f59da4796f3e8c770989031
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:54:20 2025 +0800
+
+    feat: seek submit list
+
+diff --git a/src/page/user/_component/UserTorrentListBaseView.tsx b/src/page/user/_component/UserTorrentListBaseView.tsx
+index ade029e6..53105d0b 100644
+--- a/src/page/user/_component/UserTorrentListBaseView.tsx
++++ b/src/page/user/_component/UserTorrentListBaseView.tsx
+@@ -8 +8 @@ import { AppDispatch } from "@app/store";
+-import { getUserTorrentListAction } from "@app/actions/userAction";
++import { getUserSeekSubmitListAction, getUserTorrentListAction } from "@app/actions/userAction";
+@@ -10,0 +11 @@ import { DEFAULT_PAGE_SIZE } from "@app/common/const";
++import { getUserSeekSubmitListApi } from "@app/api/userApi";
+@@ -15,0 +17 @@ interface IProps extends WithTranslation {
++  getUserSeekSubmitListTo: Callback;
+@@ -73 +75 @@ export class UserTorrentListBaseView extends React.PureComponent<IProps, IState>
+-    const { getUserTorrentListTo, id, queryParams = {} } = this.props;
++    const { getUserTorrentListTo, getUserSeekSubmitListTo, id, queryParams = {} } = this.props;
+@@ -76 +78 @@ export class UserTorrentListBaseView extends React.PureComponent<IProps, IState>
+-    getUserTorrentListTo({
++    (this.type === 'SEEK_SUBMIT' ? getUserSeekSubmitListTo : getUserTorrentListTo)({
+@@ -123,0 +126 @@ export function mapAction(dispatch: AppDispatch) {
++    getUserSeekSubmitListTo: compose(dispatch, getUserSeekSubmitListAction),

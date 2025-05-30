@@ -1,0 +1,24 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/styles/theme/sakura.scss b/src/styles/theme/sakura.scss
+new file mode 100644
+index 00000000..25293f0b
+--- /dev/null
++++ b/src/styles/theme/sakura.scss
+@@ -0,0 +1,12 @@
++@import './base.scss';
++
++body.theme-sakura {
++  @include theme-base(
++    #FFFBFA,
++    #E91E63,
++    #FAA9BD,
++    #38bdf8,
++    #ffd58e,
++    #FFFBFA url("~@app/assets/img/background/sakura.png") repeat !important
++  );
++}

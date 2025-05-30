@@ -1,0 +1,12 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/onLaunched.ts b/src/onLaunched.ts
+index 3625e154..33497ad9 100644
+--- a/src/onLaunched.ts
++++ b/src/onLaunched.ts
+@@ -32,0 +33 @@ export const handleStoreInit = async (store: any) => {
++  store.dispatch(sysinfo.setTheme(store.getState().sysinfo.theme || 'default'));

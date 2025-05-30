@@ -1,0 +1,57 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/page/seek/_component/CollectionButton.tsx b/src/page/seek/_component/CollectionButton.tsx
+new file mode 100644
+index 00000000..e51b4f4f
+--- /dev/null
++++ b/src/page/seek/_component/CollectionButton.tsx
+@@ -0,0 +1,45 @@
++import { StarFilled, StarOutlined } from "@ant-design/icons";
++import { Button } from "antd";
++import React, { useEffect, useState } from "react";
++import { seekCollectionApi } from "@app/api/seekApi";
++
++interface CollectionButtonProps {
++  data: any;
++}
++
++function CollectionButton({ data }: CollectionButtonProps) {
++  const [isChecked, setIsChecked] = useState(false);
++  const [loading, setLoading] = useState(false);
++
++  useEffect(() => {
++    setIsChecked(data.collection);
++  }, [data]);
++
++  return (
++    <Button
++      shape="circle"
++      ghost={true}
++      type="primary"
++      icon={isChecked ? <StarFilled style={{ color: "gold" }} /> : <StarOutlined />}
++      size={"small"}
++      loading={loading}
++      className={"ml-2"}
++      onClick={() => {
++        setLoading(true);
++        seekCollectionApi({
++          id: data.id,
++          make: !isChecked,
++        })
++          .then((res) => {
++            setIsChecked(!isChecked);
++          })
++          .finally(() => {
++            setLoading(false);
++          });
++
++      }}
++    />
++  );
++}
++
++export default CollectionButton;

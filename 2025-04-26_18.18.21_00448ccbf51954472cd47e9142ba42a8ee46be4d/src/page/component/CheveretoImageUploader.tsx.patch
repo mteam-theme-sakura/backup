@@ -1,0 +1,18 @@
+commit 00448ccbf51954472cd47e9142ba42a8ee46be4d
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 18:18:21 2025 +0800
+
+    feat master: editor paste image
+
+diff --git a/src/page/component/CheveretoImageUploader.tsx b/src/page/component/CheveretoImageUploader.tsx
+index dd3bdf44..4737894f 100644
+--- a/src/page/component/CheveretoImageUploader.tsx
++++ b/src/page/component/CheveretoImageUploader.tsx
+@@ -6,0 +7 @@ import { ImagePayload } from "@app/page/component/Editor/nodes/ImageNode";
++import Server from "@app/app.env";
+@@ -19 +20 @@ const CheveretoImageUploader: React.FC<CheveretoImageUploaderProps> = ({ setImag
+-    action: 'https://img.m-team.cc/api/1/upload',
++    action: Server.env.imgApi.url,
+@@ -21 +22 @@ const CheveretoImageUploader: React.FC<CheveretoImageUploaderProps> = ({ setImag
+-      'X-API-Key': 'chv_R_69c9b8590fa411662aecfa580ef6553fedafce215c569b7cadb0fca08e4966b9a7b29272798af37a7d1e45a8984d223179bbc926d814c4fe1c1d2753f362b1b0',
++      'X-API-Key': Server.env.imgApi.key,

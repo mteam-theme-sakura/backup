@@ -1,0 +1,13 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/api/seekApi.ts b/src/api/seekApi.ts
+index d169b84b..5480397a 100644
+--- a/src/api/seekApi.ts
++++ b/src/api/seekApi.ts
+@@ -10,0 +11,2 @@ export const seekRecoveryApi = withPathRequest("/seek/recovery");
++export const seekCollectionApi = withPathRequest("/seek/collection");
++export const seekFavApi = withPathRequest("/seek/favList");

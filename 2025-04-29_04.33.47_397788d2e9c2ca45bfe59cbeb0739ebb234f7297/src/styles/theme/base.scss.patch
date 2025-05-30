@@ -1,0 +1,15 @@
+commit 397788d2e9c2ca45bfe59cbeb0739ebb234f7297
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:33:47 2025 +0800
+
+    fix theme-cloud
+
+diff --git a/src/styles/theme/base.scss b/src/styles/theme/base.scss
+index 495300f5..0703c647 100644
+--- a/src/styles/theme/base.scss
++++ b/src/styles/theme/base.scss
+@@ -46,0 +47,4 @@
++    &.ant-menu-sub,&.ant-menu-submenu{
++      border-bottom: none !important;
++    }
++

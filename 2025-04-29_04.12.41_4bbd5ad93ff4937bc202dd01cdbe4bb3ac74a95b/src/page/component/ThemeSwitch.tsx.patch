@@ -1,0 +1,45 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/page/component/ThemeSwitch.tsx b/src/page/component/ThemeSwitch.tsx
+new file mode 100644
+index 00000000..4d3fd248
+--- /dev/null
++++ b/src/page/component/ThemeSwitch.tsx
+@@ -0,0 +1,33 @@
++import React from "react";
++import { Select } from "antd";
++import { useAppDispatch, useAppSelector } from "@app/hooks";
++import { sysinfo } from "@app/store/widgets/stateful/sysinfo";
++import { IoColorPalette } from "react-icons/io5";
++import { DownOutlined } from "@ant-design/icons";
++import { t } from "i18next";
++
++const themeList = ['default', 'cloud', 'sakura'];
++
++export default function ThemeSwitch() {
++  const theme = useAppSelector((s) => s.sysinfo.theme);
++  const dispatch = useAppDispatch();
++
++  return (
++    <Select
++      popupClassName="no-option-icon"
++      suffixIcon={null}
++      popupMatchSelectWidth={false}
++      variant="borderless"
++      style={{ display: "inline-block", width: "auto" }} value={theme} onChange={(value) => dispatch(sysinfo.setTheme(value))}>
++      {themeList.map((k) => {
++        return (
++          <Select.Option key={k} value={k}>
++            <IoColorPalette size={16} className="icon align-middle mr-2" />
++            <span className="align-middle">{t(`theme.${k}`)}</span>
++            <DownOutlined className="text-[12px] icon align-middle ml-2" />
++          </Select.Option>
++        );
++      })}
++    </Select>
++  );
++}

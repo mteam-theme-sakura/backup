@@ -1,0 +1,12 @@
+commit 12698ab87b6d11b04f59da4796f3e8c770989031
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:54:20 2025 +0800
+
+    feat: seek submit list
+
+diff --git a/src/api/userApi.ts b/src/api/userApi.ts
+index 20517547..528567a6 100644
+--- a/src/api/userApi.ts
++++ b/src/api/userApi.ts
+@@ -29,0 +30 @@ export const getUserTorrentListApi = withPathRequest("/member/getUserTorrentList
++export const getUserSeekSubmitListApi = withPathRequest("/seek/submitList");

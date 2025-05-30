@@ -1,0 +1,139 @@
+commit 00448ccbf51954472cd47e9142ba42a8ee46be4d
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 18:18:21 2025 +0800
+
+    feat master: editor paste image
+
+diff --git a/src/page/component/Editor/plugins/PasteImagePlugin.tsx b/src/page/component/Editor/plugins/PasteImagePlugin.tsx
+new file mode 100644
+index 00000000..92881384
+--- /dev/null
++++ b/src/page/component/Editor/plugins/PasteImagePlugin.tsx
+@@ -0,0 +1,127 @@
++import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
++import { useEffect, useState } from "react";
++import { Button, Divider, message, Modal, Spin } from "antd";
++import { t } from "i18next";
++import { INSERT_IMAGE_COMMAND } from "@app/page/component/Editor/plugins/ImagesPlugin";
++import React from "react";
++import Server from "@app/app.env";
++
++function PasteImagePlugin() {
++  const [editor] = useLexicalComposerContext();
++
++  const [isPasteImageModalOpen, setIsPasteImageModalOpen] = useState(false);
++  const [imgCache, setImgCache] = useState<File[]>([]);
++  const [imgUploadStatus, setImgUploadStatus] = useState<boolean[]>([]);
++  const [isUploading, setIsUploading] = useState(false);
++
++  const onPaste = (evt: ClipboardEvent) => {
++    const items = evt.clipboardData?.items;
++    if (!items || items.length === 0) {
++      return;
++    }
++
++    const files = [...items]
++      .filter((v) => v.type.indexOf("image") !== -1)
++      .map((v) => v.getAsFile())
++      .filter(Boolean) as File[];
++
++    if (!files.length) {
++      return;
++    }
++
++    evt.preventDefault();
++    setImgCache(files);
++    setImgUploadStatus(files.map(() => false));
++    setIsUploading(false);
++    setIsPasteImageModalOpen(true);
++  };
++
++  const uploadImage = () => {
++    if (!imgCache.length) return;
++    setIsUploading(true);
++    setImgUploadStatus(imgCache.map(() => true));
++
++    Promise.allSettled(
++      imgCache.map((v, i) => {
++        const formData = new FormData();
++        formData.append("source", v);
++
++        return fetch(Server.env.imgApi.url, {
++          method: "POST",
++          headers: {
++            "X-API-Key": Server.env.imgApi.key,
++          },
++          body: formData,
++        })
++          .then((res) => res.json())
++          .then((data) => {
++            setImgUploadStatus((prevStatus) => {
++              const newStatus = [...prevStatus];
++              newStatus[i] = false;
++              return newStatus;
++            });
++            return data;
++          })
++          .catch((error) => {
++            message.error(`Image upload failed: ${error.message}`, 5);
++            console.error("Error uploading image:", error);
++            throw error;
++          });
++      })
++    ).then((results) => {
++      editor.dispatchCommand(
++        INSERT_IMAGE_COMMAND,
++        results
++          .filter((v) => v.status === "fulfilled" && v.value?.image?.url)
++          .map((v) => ({
++            src: (v as PromiseFulfilledResult<any>).value.image.url,
++            altText: "",
++          }))
++      );
++
++      setIsUploading(false);
++      setIsPasteImageModalOpen(false);
++    });
++  };
++
++  useEffect(() => {
++    return editor.registerRootListener((rootElement) => {
++      if (!rootElement) return;
++      rootElement.removeEventListener("paste", onPaste);
++      rootElement.addEventListener("paste", onPaste);
++    });
++  }, [editor]);
++
++  return (
++    <Modal
++      focusTriggerAfterClose={false}
++      open={isPasteImageModalOpen}
++      onCancel={() => setIsPasteImageModalOpen(false)}
++      title={t("editor.paste_image")}
++      footer={null}
++      destroyOnClose
++      width="100%"
++      style={{ textAlign: "center", maxWidth: "700px" }}
++    >
++      {imgCache &&
++        imgCache.length > 0 &&
++        imgCache.map((item, i) => (
++          <React.Fragment key={i}>
++            <Spin spinning={imgUploadStatus[i]}>
++              <img style={{ maxWidth: "100%", maxHeight: isUploading && imgCache.length > 1 ? "20vh" : "60vh" }} src={URL.createObjectURL(item)} alt="Pasted" />
++              <Divider />
++            </Spin>
++          </React.Fragment>
++        ))}
++
++      <Button type="primary" className="mr-2" onClick={uploadImage} loading={isUploading}>
++        {t("confirm")}
++      </Button>
++      <Button onClick={() => setIsPasteImageModalOpen(false)} disabled={isUploading}>
++        {t("common.cancel")}
++      </Button>
++    </Modal>
++  );
++}
++
++export default PasteImagePlugin;

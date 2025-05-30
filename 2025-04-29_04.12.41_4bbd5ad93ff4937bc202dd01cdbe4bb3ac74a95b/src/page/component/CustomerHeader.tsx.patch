@@ -1,0 +1,14 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/page/component/CustomerHeader.tsx b/src/page/component/CustomerHeader.tsx
+index b5c53cf6..06a5926e 100644
+--- a/src/page/component/CustomerHeader.tsx
++++ b/src/page/component/CustomerHeader.tsx
+@@ -27,0 +28 @@ import { formatToISO8601DateTimeString, getDiffDays } from "@app/common/utils/da
++import ThemeSwitch from "@app/page/component/ThemeSwitch";
+@@ -48,0 +50 @@ export function HeaderTop() {
++        <ThemeSwitch></ThemeSwitch>

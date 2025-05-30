@@ -1,0 +1,19 @@
+commit dc1f4527a93d593b45f9eb41a67e49f74d0b57a0
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 07:32:40 2025 +0800
+
+    fix theme
+
+diff --git a/src/styles/theme/base.scss b/src/styles/theme/base.scss
+index e0564b7c..4b04430b 100644
+--- a/src/styles/theme/base.scss
++++ b/src/styles/theme/base.scss
+@@ -14 +14 @@
+-    background: $color2;
++    background: white;
+@@ -181,0 +182,5 @@
++  .slick-slider{
++    .bg-mt-primary-3{
++      background: $color2;
++    }
++  }

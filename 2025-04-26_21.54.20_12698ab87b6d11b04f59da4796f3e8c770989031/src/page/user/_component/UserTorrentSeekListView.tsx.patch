@@ -1,0 +1,13 @@
+commit 12698ab87b6d11b04f59da4796f3e8c770989031
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:54:20 2025 +0800
+
+    feat: seek submit list
+
+diff --git a/src/page/user/_component/UserTorrentSeekListView.tsx b/src/page/user/_component/UserTorrentSeekListView.tsx
+index e9e23200..03d614c9 100644
+--- a/src/page/user/_component/UserTorrentSeekListView.tsx
++++ b/src/page/user/_component/UserTorrentSeekListView.tsx
+@@ -12 +12 @@ import DateTime from "@app/page/component/DateTime";
+-class UserTorrentSeekListView extends UserTorrentListBaseView {
++export class UserTorrentSeekListView extends UserTorrentListBaseView {

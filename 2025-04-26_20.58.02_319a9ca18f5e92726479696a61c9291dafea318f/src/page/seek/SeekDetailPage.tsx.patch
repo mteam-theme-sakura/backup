@@ -1,0 +1,14 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/page/seek/SeekDetailPage.tsx b/src/page/seek/SeekDetailPage.tsx
+index 1f31e305..21aabf34 100644
+--- a/src/page/seek/SeekDetailPage.tsx
++++ b/src/page/seek/SeekDetailPage.tsx
+@@ -30,0 +31 @@ import { convertToLocalDateTime, format2Relative } from "@app/common/utils/dateT
++import CollectionButton from "@app/page/seek/_component/CollectionButton";
+@@ -172,0 +174 @@ class SeekDetailPage extends React.PureComponent<IProps, IState> {
++          <CollectionButton data={detail}></CollectionButton>

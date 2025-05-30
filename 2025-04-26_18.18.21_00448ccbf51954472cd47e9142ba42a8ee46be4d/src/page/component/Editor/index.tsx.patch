@@ -1,0 +1,14 @@
+commit 00448ccbf51954472cd47e9142ba42a8ee46be4d
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 18:18:21 2025 +0800
+
+    feat master: editor paste image
+
+diff --git a/src/page/component/Editor/index.tsx b/src/page/component/Editor/index.tsx
+index b9646257..3d473235 100644
+--- a/src/page/component/Editor/index.tsx
++++ b/src/page/component/Editor/index.tsx
+@@ -41,0 +42 @@ import PastePlugin from "./plugins/PastePlugin";
++import PasteImagePlugin from "@app/page/component/Editor/plugins/PasteImagePlugin";
+@@ -206,0 +208 @@ const Editor = forwardRef(
++            <PasteImagePlugin />

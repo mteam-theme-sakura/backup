@@ -1,0 +1,45 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/page/seek/SeekListPage.tsx b/src/page/seek/SeekListPage.tsx
+index b877b133..a0faf70b 100644
+--- a/src/page/seek/SeekListPage.tsx
++++ b/src/page/seek/SeekListPage.tsx
+@@ -10 +10 @@ import * as _ from "lodash-es";
+-import { seekSearchAction } from "@app/actions/seekAction";
++import { seekFavAction, seekSearchAction } from "@app/actions/seekAction";
+@@ -26,0 +27 @@ import SearchPanel from "./_component/SearchPanel";
++import CollectionButton from "@app/page/seek/_component/CollectionButton";
+@@ -34,0 +36 @@ interface IProps extends WithTranslation {
++    onlyFav?: string;
+@@ -36,0 +39 @@ interface IProps extends WithTranslation {
++  seekFavList: Callback;
+@@ -74 +77 @@ class SeekListPage extends React.PureComponent<IProps, IState> {
+-    this.fetchData(this.props.navParams.page);
++    if(!this.state.loading) this.fetchData(this.props.navParams.page);
+@@ -104 +107,2 @@ class SeekListPage extends React.PureComponent<IProps, IState> {
+-    await this.props.seekSearchTo({
++    await (this.props.navParams.onlyFav ? this.props.seekFavList : this.props.seekSearchTo)({
++      onlyFav: this.props.navParams.onlyFav,
+@@ -164 +168 @@ class SeekListPage extends React.PureComponent<IProps, IState> {
+-        <SearchPanel onSearch={this.handleSearch} />
++        {!this.props.navParams.onlyFav && <SearchPanel onSearch={this.handleSearch} /> }
+@@ -241,5 +245,8 @@ class SeekListPage extends React.PureComponent<IProps, IState> {
+-            <Link to={"/seekDetail"} params={{ id: row.id }} target="_blank">
+-              <Typography.Text delete={take} strong={!take} italic={take}>
+-                {val}
+-              </Typography.Text>
+-            </Link>
++            <div className="flex rows-center justify-between flex-nowrap">
++              <Link to={"/seekDetail"} params={{ id: row.id }} target="_blank">
++                <Typography.Text delete={take} strong={!take} italic={take}>
++                  {val}
++                </Typography.Text>
++              </Link>
++              <CollectionButton data={row}></CollectionButton>
++            </div>
+@@ -335,0 +343 @@ function mapAction(dispatch: AppDispatch) {
++    seekFavList: compose(dispatch, seekFavAction),

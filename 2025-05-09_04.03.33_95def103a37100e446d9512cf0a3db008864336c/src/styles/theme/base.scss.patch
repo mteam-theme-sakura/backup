@@ -1,0 +1,14 @@
+commit 95def103a37100e446d9512cf0a3db008864336c
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Fri May 9 04:03:33 2025 +0800
+
+    修checkbox半选中的颜色
+
+diff --git a/src/styles/theme/base.scss b/src/styles/theme/base.scss
+index 4b04430b..df905f06 100644
+--- a/src/styles/theme/base.scss
++++ b/src/styles/theme/base.scss
+@@ -159,0 +160,3 @@
++  .ant-checkbox-indeterminate .ant-checkbox-inner:after{
++    background-color: $color2;
++  }

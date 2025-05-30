@@ -1,0 +1,21 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/store/widgets/stateful/sysinfo.tsx b/src/store/widgets/stateful/sysinfo.tsx
+index d3499982..f08b14e5 100644
+--- a/src/store/widgets/stateful/sysinfo.tsx
++++ b/src/store/widgets/stateful/sysinfo.tsx
+@@ -63 +63,2 @@ const initialState = {
+-  } as INews
++  } as INews,
++  theme: 'default',
+@@ -203 +204,5 @@ const slice = createSlice({
+-    }
++    },
++    setTheme: (state, { payload }: { payload: string }) => {
++      document.body.className = `theme-${payload}`;
++      state.theme = payload;
++    },

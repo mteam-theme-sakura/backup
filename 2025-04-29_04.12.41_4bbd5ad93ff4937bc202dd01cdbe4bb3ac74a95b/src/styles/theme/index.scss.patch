@@ -1,0 +1,18 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/styles/theme/index.scss b/src/styles/theme/index.scss
+new file mode 100644
+index 00000000..6f56a02f
+--- /dev/null
++++ b/src/styles/theme/index.scss
+@@ -0,0 +1,6 @@
++@import './sakura.scss';
++@import "./cloud.scss";
++
++body{
++  transition: background 1s;
++}

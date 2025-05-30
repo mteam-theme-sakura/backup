@@ -1,0 +1,12 @@
+commit 55d539af32e2ef65d9d42cf480bb08fa8552bb31
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:01:23 2025 +0800
+
+    fix: seek fav i18n
+
+diff --git a/src/common/i18n/zh-CN.json b/src/common/i18n/zh-CN.json
+index f458ab6d..6baabe72 100644
+--- a/src/common/i18n/zh-CN.json
++++ b/src/common/i18n/zh-CN.json
+@@ -169,0 +170 @@
++  "collection_seek": "求种",

@@ -1,0 +1,14 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/page/component/CustomerHeader.tsx b/src/page/component/CustomerHeader.tsx
+index b5c53cf6..6ae382f7 100644
+--- a/src/page/component/CustomerHeader.tsx
++++ b/src/page/component/CustomerHeader.tsx
+@@ -153,0 +154,3 @@ class CustomerHeader extends React.PureComponent<IHeaderProps> {
++                    <Link to={"/seek"} params={{ onlyFav: 1 }}>
++                      {t("collection_seek")}
++                    </Link>

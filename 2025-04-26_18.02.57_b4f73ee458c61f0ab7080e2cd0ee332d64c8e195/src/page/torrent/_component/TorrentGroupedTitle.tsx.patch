@@ -1,0 +1,19 @@
+commit b4f73ee458c61f0ab7080e2cd0ee332d64c8e195
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 18:02:57 2025 +0800
+
+    fix master: torrent list subtitle tooltip
+
+diff --git a/src/page/torrent/_component/TorrentGroupedTitle.tsx b/src/page/torrent/_component/TorrentGroupedTitle.tsx
+index 42d415fb..25959786 100644
+--- a/src/page/torrent/_component/TorrentGroupedTitle.tsx
++++ b/src/page/torrent/_component/TorrentGroupedTitle.tsx
+@@ -38,0 +39 @@ const TorrentGroupedTitle = memo(({ torrent, torrentNameSuffix, showSeedbox = fa
++  const torrentSubtitleTooltip = <span style={{ color: "#232222", fontSize: 12 }}>{torrent.smallDescr}</span>;
+@@ -64 +65,5 @@ const TorrentGroupedTitle = memo(({ torrent, torrentNameSuffix, showSeedbox = fa
+-            <Typography.Text ellipsis={true}>{torrent.smallDescr || ""}</Typography.Text>
++            <Typography.Text ellipsis={true}>
++              <Tooltip title={torrentSubtitleTooltip} color="#E7E1E0" arrow={false} overlayStyle={{ maxWidth: 500 }} placement="bottom">
++                {torrent.smallDescr || ""}
++              </Tooltip>
++            </Typography.Text>

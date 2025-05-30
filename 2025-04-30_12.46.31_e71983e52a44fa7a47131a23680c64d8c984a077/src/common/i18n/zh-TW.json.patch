@@ -1,0 +1,13 @@
+commit e71983e52a44fa7a47131a23680c64d8c984a077
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Wed Apr 30 12:46:31 2025 +0800
+
+    Update zh-TW.json
+
+diff --git a/src/common/i18n/zh-TW.json b/src/common/i18n/zh-TW.json
+index 350863f8..eaabf86a 100644
+--- a/src/common/i18n/zh-TW.json
++++ b/src/common/i18n/zh-TW.json
+@@ -1898 +1898 @@
+-    "default": "外觀",
++    "default": "預設外觀",

@@ -1,0 +1,15 @@
+commit 319a9ca18f5e92726479696a61c9291dafea318f
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 20:58:02 2025 +0800
+
+    feat: seek fav
+
+diff --git a/src/actions/seekAction.ts b/src/actions/seekAction.ts
+index 59b7a7d5..713b442a 100644
+--- a/src/actions/seekAction.ts
++++ b/src/actions/seekAction.ts
+@@ -2 +2 @@ import { callWithLoading } from "@app/common/utils/loading";
+-import { seekAddtoApi, seekCreateApi, seekDetailApi, seekEditApi, seekRecoveryApi, seekSearchApi, seekSubmitApi, seekTakeApi } from "../api/seekApi";
++import { seekAddtoApi, seekCreateApi, seekDetailApi, seekEditApi, seekRecoveryApi, seekSearchApi, seekSubmitApi, seekTakeApi, seekFavApi } from "../api/seekApi";
+@@ -11,0 +12 @@ export const seekRecoveryAction = callWithLoading(seekRecoveryApi);
++export const seekFavAction = callWithLoading(seekFavApi);

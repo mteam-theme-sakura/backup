@@ -1,0 +1,12 @@
+commit 12698ab87b6d11b04f59da4796f3e8c770989031
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:54:20 2025 +0800
+
+    feat: seek submit list
+
+diff --git a/src/common/i18n/zh-TW.json b/src/common/i18n/zh-TW.json
+index 57c46a96..47efd58d 100644
+--- a/src/common/i18n/zh-TW.json
++++ b/src/common/i18n/zh-TW.json
+@@ -871,0 +872 @@
++    "submit_seek": "已提交應求",

@@ -1,0 +1,12 @@
+commit 00448ccbf51954472cd47e9142ba42a8ee46be4d
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 18:18:21 2025 +0800
+
+    feat master: editor paste image
+
+diff --git a/src/common/i18n/zh-CN.json b/src/common/i18n/zh-CN.json
+index f458ab6d..1439f096 100644
+--- a/src/common/i18n/zh-CN.json
++++ b/src/common/i18n/zh-CN.json
+@@ -1363,0 +1364 @@
++    "paste_image": "粘贴图片",

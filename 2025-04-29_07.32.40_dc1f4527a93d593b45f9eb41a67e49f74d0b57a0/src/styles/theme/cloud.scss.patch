@@ -1,0 +1,17 @@
+commit dc1f4527a93d593b45f9eb41a67e49f74d0b57a0
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 07:32:40 2025 +0800
+
+    fix theme
+
+diff --git a/src/styles/theme/cloud.scss b/src/styles/theme/cloud.scss
+index b108394c..2fb71e3a 100644
+--- a/src/styles/theme/cloud.scss
++++ b/src/styles/theme/cloud.scss
+@@ -19,3 +19,3 @@ body.theme-cloud {
+-  .bg-\[\#2f4879\],.ant-table-thead >tr>th,.colhead{
+-    background: white !important;
+-    color: black!important;
++  .bg-\[\#2f4879\],.ant-table-thead >tr>th,.colhead,table.tablist thead td{
++    background: #03A9F4 !important;
++    color: #ffffff !important;

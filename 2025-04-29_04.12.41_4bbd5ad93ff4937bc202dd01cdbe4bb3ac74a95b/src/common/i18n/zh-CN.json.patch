@@ -1,0 +1,16 @@
+commit 4bbd5ad93ff4937bc202dd01cdbe4bb3ac74a95b
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:12:41 2025 +0800
+
+    主题
+
+diff --git a/src/common/i18n/zh-CN.json b/src/common/i18n/zh-CN.json
+index 1439f096..7e380289 100644
+--- a/src/common/i18n/zh-CN.json
++++ b/src/common/i18n/zh-CN.json
+@@ -1813,0 +1814,5 @@
++  },
++  "theme": {
++    "default": "主题",
++    "sakura": "樱花粉",
++    "cloud": "那白真云"

@@ -1,0 +1,15 @@
+commit b427572ecbb27a920e92f686353e7d7d6b5d3888
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Fri May 9 04:04:00 2025 +0800
+
+    让云朵白不那么刺眼
+
+diff --git a/src/styles/theme/base.scss b/src/styles/theme/base.scss
+index df905f06..7e0581ef 100644
+--- a/src/styles/theme/base.scss
++++ b/src/styles/theme/base.scss
+@@ -86,0 +87,4 @@
++  .ant-table-title{
++    border: 1px solid #000 !important;
++    border-bottom: none !important;
++  }

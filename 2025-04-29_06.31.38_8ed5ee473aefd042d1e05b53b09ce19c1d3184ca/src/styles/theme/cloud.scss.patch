@@ -1,0 +1,13 @@
+commit 8ed5ee473aefd042d1e05b53b09ce19c1d3184ca
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 06:31:38 2025 +0800
+
+    Update cloud.scss
+
+diff --git a/src/styles/theme/cloud.scss b/src/styles/theme/cloud.scss
+index 8b5e6f32..b108394c 100644
+--- a/src/styles/theme/cloud.scss
++++ b/src/styles/theme/cloud.scss
+@@ -21 +21 @@ body.theme-cloud {
+-    color: black;
++    color: black!important;

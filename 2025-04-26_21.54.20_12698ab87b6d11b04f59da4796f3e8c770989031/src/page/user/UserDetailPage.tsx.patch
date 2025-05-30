@@ -1,0 +1,21 @@
+commit 12698ab87b6d11b04f59da4796f3e8c770989031
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Sat Apr 26 21:54:20 2025 +0800
+
+    feat: seek submit list
+
+diff --git a/src/page/user/UserDetailPage.tsx b/src/page/user/UserDetailPage.tsx
+index 86758403..4c69642f 100644
+--- a/src/page/user/UserDetailPage.tsx
++++ b/src/page/user/UserDetailPage.tsx
+@@ -41,0 +42 @@ import DateTime from "@app/page/component/DateTime";
++import UserTorrentSeekSubmitListView from "@app/page/user/_component/UserTorrentSeekSubmitListView";
+@@ -721,0 +723,8 @@ class UserDetailPage extends React.Component<IProps, IState> {
++              {(hasPermission("ADMIN_USER_VIEW_SUBMIT_SEEK") || this.isSelf) && <tr>
++                <td valign="top" align="right">
++                  {t("user_profile.submit_seek")}
++                </td>
++                <td valign="top" align="left">
++                  <UserTorrentSeekSubmitListView id={id} title={t("user_profile.submit_seek")} />
++                </td>
++              </tr>}

@@ -1,0 +1,26 @@
+commit b427572ecbb27a920e92f686353e7d7d6b5d3888
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Fri May 9 04:04:00 2025 +0800
+
+    让云朵白不那么刺眼
+
+diff --git a/src/styles/theme/cloud.scss b/src/styles/theme/cloud.scss
+index 2fb71e3a..bed67ac6 100644
+--- a/src/styles/theme/cloud.scss
++++ b/src/styles/theme/cloud.scss
+@@ -8 +8 @@ body.theme-cloud {
+-      #EEF0F8
++      #caced9 url("~@app/assets/img/background/white.svg") no-repeat fixed center / cover !important
+@@ -20,2 +20,2 @@ body.theme-cloud {
+-    background: #03A9F4 !important;
+-    color: #ffffff !important;
++    background: rgba(#66ccff, 0.5) !important;
++    color: black !important;
+@@ -27 +27 @@ body.theme-cloud {
+-    background: white;
++    background: rgba(white, 0.6);
+@@ -33,0 +34,4 @@ body.theme-cloud {
++  .bg-\[\#bccad6\],.ant-table{
++    background: rgba(white, 0.6) !important;
++  }
++

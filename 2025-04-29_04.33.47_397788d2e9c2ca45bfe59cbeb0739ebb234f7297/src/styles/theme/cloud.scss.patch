@@ -1,0 +1,20 @@
+commit 397788d2e9c2ca45bfe59cbeb0739ebb234f7297
+Author: 悦咚 / Dark495 <flandrestudio.cn@gmail.com>
+Date:   Tue Apr 29 04:33:47 2025 +0800
+
+    fix theme-cloud
+
+diff --git a/src/styles/theme/cloud.scss b/src/styles/theme/cloud.scss
+index fa40dabd..8b5e6f32 100644
+--- a/src/styles/theme/cloud.scss
++++ b/src/styles/theme/cloud.scss
+@@ -20 +20 @@ body.theme-cloud {
+-    background: rgba(black, 0.02) !important;
++    background: white !important;
+@@ -25,0 +26 @@ body.theme-cloud {
++    backdrop-filter: none;
+@@ -31,0 +33,4 @@ body.theme-cloud {
++
++  .editor-container{
++    border: 1px solid #d9d9d9;
++  }
